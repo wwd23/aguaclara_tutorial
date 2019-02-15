@@ -3,7 +3,7 @@
 ## Running Code With Hydrogen
 1. Below this, I've copied the code I wrote for the [Python Packages](https://aguaclara.github.io/aguaclara_tutorial/python-and-hydrogen/python-packages.html) tutorial. You should familiarize yourself with the different Hydrogen commands using this code. For the first line, use `Hydrogen: Run` (`Cmd + Enter`).
 2. For the second line, use `Hydrogen: Run and Move Down` (`Shift + Enter`).
-3. For the remaining code, highlight it with your cursor and use `Hydrogen: Run`. What is the difference between the three?
+3. For the remaining code, highlight it with your cursor and use `Hydrogen: Run`. What is the difference between the three
 
 ```python
 from aguaclara.play import *
@@ -33,9 +33,9 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 <!--- Fill you answer here. --->
 ```python
-if (x=10):
+if (x==10):
   print(x)
-elif (x=1):
+elif (x==1):
   print(x)
 else:
   print(x)
@@ -70,7 +70,7 @@ sin(4)*u.m
 ```python
 myList = [0, 1, 2, 3, 4]
 if (myList.length = 5):
-  
+
 
 
 ```
