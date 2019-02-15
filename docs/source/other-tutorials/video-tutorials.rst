@@ -8,7 +8,6 @@ This page will link you to video tutorials for things like GitHub, Hydrogen, Mar
 
 
 * `Setting Up Atom for AguaClara Development <http://autode.sk/2nEmgRS>`_
-* `Installing the ``aide_design`` Python Package <http://autode.sk/2E2EkAg>`_
 * `Using Python Packages in Atom (Mac Users Only) <http://autode.sk/2FJLPrZ>`_
 * `Cloning a Repository <http://autode.sk/2nEmCbl>`_
 * `Cloning a Wiki <http://autode.sk/2DyyoyO>`_
