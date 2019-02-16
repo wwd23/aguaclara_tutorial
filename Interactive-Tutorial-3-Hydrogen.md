@@ -33,6 +33,7 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 <!--- Fill you answer here. --->
 ```python
+x=0
 if (x==10):
   print(x)
 elif (x==1):
@@ -61,7 +62,7 @@ print(index)
 <!--- Fill you answer here. --->
 ```python
 u.default_format= '.2f'
-sin(4)*u.m
+return sin(4)*u.m
 
 ```
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
@@ -69,9 +70,14 @@ sin(4)*u.m
 <!--- Fill you answer here. --->
 ```python
 myList = [0, 1, 2, 3, 4]
-if (myList.length = 5):
-
-
+if (myList.length == 5):
+myArray = (np.array(myList))*u.m
+my2DArray = np.array([[1 ,2, 3, 4, 5], [1 ,2, 3, 4, 5], [1 ,2, 3, 4, 5], \
+[1 ,2, 3, 4, 5],[1 ,2, 3, 4, 5]])
+my2DArray[:,2]
+my2DArray[2,:]
+if (my2DArray.size == 25)
+return my2DArray*u.m
 
 ```
 
@@ -93,13 +99,43 @@ from scipy.constants import Boltzmann as kB_sc # I've imported the unitless valu
 kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
 
 # Write your code here
+def stokes_einstein_diffusion(T, eta, r):
+    return (kB_sc*(T.to(u.kelvin))/(6*np.pi*eta*(r.to(u.meter)).to_base_units()
+
+diffusion = stokes_einstein_diffusion(200, 1.3, 4)
+print(diffusion)
+
 
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
 
 <!--- Fill you answer here. --->
+```python
+u.default_format = '.3f'
+xlist=np.zeros(201)
+xarray=np.array(xlist)
+for i in range(0,201):
+  if (i==0):
+    xarray[i]=pc.viscosity_kinematic(i+0.1*u.kelvin)
+  else:
+    xarray[i]=pc.viscosity_kinematic(i*u.kelvin)
 
+flow_rate = 2/3*(u.m**3/u.s)
+pipe_diameter = 0.4*u.m
+viscosity = xlist
+
+plt.plot(xlist, pc.re_pipe(flow_rate, pipe_diameter, viscosity), '-', label = 'Reynolds Number')
+plt.xlabel('Temperature (Kelvin)')
+plt.ylabel('Reynolds Number')
+plt.title('Reynolds Number Against Temperature')
+plt.minorticks_on()
+plt.grid(which = 'major')
+plt.grid(which = 'minor')
+plt.legend(loc = 'lower right', ncol = 1)
+plt.show()
+
+```
 
 # GitHub Basics
 Congratulations! You've completed this interactive tutorial. Now all you need to do is save your work and put it on your personal repository. Toggle the Git Tab using `Cntrl + Shift + 9`.
